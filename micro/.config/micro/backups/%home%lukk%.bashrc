@@ -121,7 +121,9 @@ export EDITOR="micro"
 export VISUAL="micro"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-eval "$(oh-my-posh init bash --config $HOME/.cache/oh-my-posh/themes/catppuccin_mocha.omp.json)"
+export PATH=$PATH:/home/lukk/.local/bin
+eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/cattpuccin-mocha.toml)"
+#eval "$(oh-my-posh init bash --config $HOME/.cache/oh-my-posh/themes/clean-detailed.omp.json)"
 eval "$(zoxide init bash)"
 
 alias cranger='tmpfile=$(mktemp); ranger --choosedir="$tmpfile"; cd "$(cat $tmpfile)"; rm -f $tmpfile'
