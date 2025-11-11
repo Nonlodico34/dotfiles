@@ -141,11 +141,15 @@ LC_TIME=it_IT.UTF-8 tmux
 cd /home/lukk
 # z /mnt/c/Users/Nonlodico34/OneDrive/C++/Fun/TerminalGraphics/release_linux
 # l
+clear
+echo "Data e ora attuali: $(date)"
+echo "Terminale in uso: $TERM"
 
 # Macro
-run(){
-	file="$1"
+run() {
+    file="$1"
+    shift
     exe="${file%.cpp}"
-    g++ "$file" -o "$exe" && "./$exe"
+    g++ "$file" -o "$exe" && "./$exe" "$@"
     rm "./$exe"
 }
