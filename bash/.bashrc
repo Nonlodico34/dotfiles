@@ -153,3 +153,4 @@ run() {
     g++ "$file" -o "$exe" && "./$exe" "$@"
     rm "./$exe"
 }
+alias runDev='bash ~/dotfiles/scripts/runDev.sh'
